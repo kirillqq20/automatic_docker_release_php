@@ -8,7 +8,7 @@ pipeline {
                 url: 'https://github.com/kirillqq20/automatic_docker_release_php.git'
             }
         }
-        
+
         stage ('Test') {
             steps {
                 dir ('build'){
@@ -17,6 +17,7 @@ pipeline {
                 }
             }
         }
+
         stage ('Build') {
             steps {
                 dir ('build'){
@@ -24,6 +25,7 @@ pipeline {
                 }
             }
         }
+        
         stage ('Docker push') {
             steps {
                 withDockerRegistry(credentialsId: 'Docker-hub-kirillqq20', url: 'https://index.docker.io/v1/'){
@@ -39,4 +41,5 @@ pipeline {
                 sh ' docker rmi kirillqq20/automatic_docker_release_php:v1'
             }
         }
+    }
 }
