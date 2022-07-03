@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('Checkout') {
             steps {
-                git branch 'main', 
+                git branch: 'main', 
                 url: 'https://github.com/kirillqq20/automatic_docker_release_php.git'
             }
         }
