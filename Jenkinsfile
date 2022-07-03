@@ -8,7 +8,7 @@ pipeline {
                 url: 'https://github.com/kirillqq20/automatic_docker_release_php.git'
             }
         }
-    }
+        
         stage ('Test') {
             steps {
                 dir ('build'){
