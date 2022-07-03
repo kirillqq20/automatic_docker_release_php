@@ -41,12 +41,5 @@ pipeline {
                 sh ' docker rmi kirillqq20/automatic_docker_release_php:v1'
             }
         }
-        stage ('RUN') {
-            steps {
-                dir ('build'){
-                   sh 'docker run -it p 1122:80 kirillqq20/automatic_docker_release_php:v1'
-                }
-            }
-        }
     }
 }
