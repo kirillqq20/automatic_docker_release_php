@@ -25,7 +25,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage ('Docker push') {
             steps {
                 withDockerRegistry(credentialsId: 'Docker-hub-kirillqq20', url: 'https://index.docker.io/v1/'){
@@ -39,6 +39,13 @@ pipeline {
         stage ('Delete image') {
             steps {
                 sh ' docker rmi kirillqq20/automatic_docker_release_php:v1'
+            }
+        }
+        stage ('RUN') {
+            steps {
+                dir ('build'){
+                   sh 'docker run -it p 1122:80 kirillqq20/automatic_docker_release_php:v1'
+                }
             }
         }
     }
