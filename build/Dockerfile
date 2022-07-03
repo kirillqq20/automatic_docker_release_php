@@ -1,12 +1,12 @@
-FROM ubuntu:20.04
+FROM amazonlinux
 
-RUN apt-get update
-RUN apt-get install -y apache2
-RUN apt-get install -y php 
+RUN yum -y update
+RUN yum -y install httpd
+RUN yum -y install php 
 
 COPY ./index.php /var/www/html/index.php
 
 
-CMD ["/usr/sbin/apache2","-D","FOREGROUND"]
+CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
 
 EXPOSE 80
