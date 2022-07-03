@@ -30,8 +30,10 @@ pipeline {
                     sh '''
                         docker push kirillqq20/automatic_docker_release_php:v1
                      '''
+                }
             }
         }
+        
         stage ('Delete image') {
             steps {
                 sh ' docker rmi kirillqq20/automatic_docker_release_php:v1'
