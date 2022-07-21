@@ -1,8 +1,8 @@
 <html>
  <head>
-  <title>Тестируем PHP</title>
+  <title>testing terraform</title>
  </head>
  <body>
- <?php echo '<p>Привет, мир!</p>'; ?>
+ <?php echo '<p>Great work!</p>'; ?>
  </body>
 </html>
